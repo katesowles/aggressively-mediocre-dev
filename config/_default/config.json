@@ -1,0 +1,11 @@
+{
+  "baseURL": "https://aggressivelymediocre.dev/",
+  "defaultContentLanguage": "en",
+  "enableGitInfo": true,
+  "languageCode": "en-us",
+  "subtitle": "",
+  "theme": "aggressively-mediocre",
+  "title": "Aggressively Mediocre",
+  "params": {},
+  "refLinksNotFoundURL": ""
+}
