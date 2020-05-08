@@ -7,8 +7,7 @@
   },
   "pagination": 5,
   "permalinks": {
-    "pages": "/:filename",
-    "posts": "/:year:month:day/:filename"
-  },
-  "summaryLength": 30
+    "pages": "",
+    "posts": ""
+  }
 }

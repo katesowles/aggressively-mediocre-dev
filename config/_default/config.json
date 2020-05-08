@@ -6,6 +6,14 @@
   "subtitle": "",
   "theme": "aggressively-mediocre",
   "title": "Aggressively Mediocre",
-  "params": {},
-  "refLinksNotFoundURL": ""
+  "params": {
+    "author": "Kateypical",
+    "description": "An extremely-human human, processing human things outloud.",
+    "footerText": "Site template is a custom modification of the free <a href=\"https://github.com/microdotblog/theme-kiko\">Kiko Theme</a>. Date format usage inspired by <a href=\"https://tatianamac.com\">Tatiana Mac</a>.",
+    "listFullPosts": true
+  },
+  "refLinksNotFoundURL": "",
+  "taxonomies": {
+    "tag": "tags"
+  }
 }
