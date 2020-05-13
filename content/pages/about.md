@@ -1,5 +1,6 @@
 ---
 title: "About"
+url: "/about"
 date: 2020-05-06T12:00:00-07:00
 draft: false
 ---
