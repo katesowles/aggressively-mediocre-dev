@@ -1,6 +1,3 @@
 [submodule "themes/aggressively-mediocre"]
 	path = themes/aggressively-mediocre
 	url = https://github.com/katesowles/aggressively-mediocre.git
-[submodule "themes/blank"]
-	path = themes/blank
-	url = https://github.com/katesowles/blank.git
