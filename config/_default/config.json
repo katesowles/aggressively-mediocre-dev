@@ -3,14 +3,27 @@
   "defaultContentLanguage": "en",
   "enableGitInfo": true,
   "languageCode": "en-us",
-  "subtitle": "",
   "theme": "aggressively-mediocre",
   "title": "Aggressively Mediocre",
   "params": {
     "author": "Kateypical",
     "description": "An extremely-human human, processing human things outloud.",
-    "footerText": "Site template is a custom modification of the free <a href=\"https://github.com/microdotblog/theme-kiko\">Kiko Theme</a>. Date format usage inspired by <a href=\"https://tatianamac.com\">Tatiana Mac</a>.",
-    "listFullPosts": true
+    "titleDim": "dot dev",
+    "footerText": "This site is built on <a href=\"https://gohugo.io\">Hugo</a> and the theme is a custom reworking of Micro.blog's <a href=\"https://github.com/microdotblog/theme-kiko\">Kiko</a> theme. Post date format inspired by <a href=\"https://tatianamac.com\">Tatiana Mac</a>.",
+    "listFullPosts": true,
+    "rssFullPosts": true,
+    "rssFeedLinkText": "RSS",
+    "rssFeedLinkUrl": "/posts/feed.xml"
+  },
+  "outputs": {
+    "home": ["HTML", "RSS"],
+    "page": ["HTML", "RSS"]
+  },
+  "outputFormats": {
+    "rss": {
+      "mediatype": "application/rss",
+      "baseName": "feed"
+    }
   },
   "refLinksNotFoundURL": "",
   "taxonomies": {
