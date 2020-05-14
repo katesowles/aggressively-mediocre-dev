@@ -13,7 +13,7 @@
     "listFullPosts": true,
     "rssFullPosts": true,
     "rssFeedLinkText": "RSS",
-    "rssFeedLinkUrl": "/posts/feed.xml"
+    "rssFeedLinkUrl": "/feed.xml"
   },
   "outputs": {
     "home": ["HTML", "RSS"],
@@ -24,6 +24,10 @@
       "mediatype": "application/rss",
       "baseName": "feed"
     }
+  },
+  "permalinks": {
+    "pages": "/:title/",
+    "posts": "/:year-:month-:day/:title/"
   },
   "refLinksNotFoundURL": "",
   "taxonomies": {
