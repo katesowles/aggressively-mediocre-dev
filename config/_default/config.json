@@ -8,11 +8,12 @@
   "params": {
     "author": "Kateypical",
     "description": "An extremely-human human, processing human things outloud.",
-    "footerText": "This site is built on <a href=\"https://gohugo.io\">Hugo</a> and the theme is a custom reworking of Micro.blog's <a href=\"https://github.com/microdotblog/theme-kiko\">Kiko</a> theme. Post date format inspired by <a href=\"https://tatianamac.com\">Tatiana Mac</a>.",
+    "footerText": "This site is built on <a href=\"https://gohugo.io\">Hugo</a>. Post date format inspired by <a href=\"https://tatianamac.com\">Tatiana Mac</a>. For the code-curious, the <a href=\"https://github.com/katesowles/aggressively-mediocre-dev\">template repository</a> and the <a href=\"https://github.com/katesowles/aggressively-mediocre\">content repository</a>",
+    "homeNavLinkText": "Posts",
     "listFullPosts": true,
     "rssFullPosts": true,
     "rssFeedLinkText": "RSS",
-    "rssFeedLinkUrl": "/posts/feed.xml"
+    "rssFeedLinkUrl": "/feed.xml"
   },
   "outputs": {
     "home": ["HTML", "RSS"],
@@ -24,8 +25,13 @@
       "baseName": "feed"
     }
   },
+  "permalinks": {
+    "pages": "/:title/",
+    "posts": "/:year-:month-:day/:title/"
+  },
   "refLinksNotFoundURL": "",
   "taxonomies": {
+    "category": "categories",
     "tag": "tags"
   }
 }
