@@ -27,7 +27,7 @@
   },
   "permalinks": {
     "pages": "/:title/",
-    "posts": "/posts/:title/"
+    "posts": "/:title/"
   },
   "refLinksNotFoundURL": "",
   "taxonomies": {
