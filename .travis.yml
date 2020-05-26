@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - 10 # use Node 10 LTS or later
 before_install:
+  - brew install hugo
   - npm install -g @lhci/cli
 script:
   - hugo --gc --minify # build your site
