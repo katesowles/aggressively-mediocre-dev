@@ -8,7 +8,7 @@
   "params": {
     "author": "Kateypical",
     "description": "An extremely-human human, processing human things outloud.",
-    "footerText": "This site is built on <a href=\"https://gohugo.io\">Hugo</a>. Post date format inspired by <a href=\"https://tatianamac.com\">Tatiana Mac</a>. For the code-curious, the <a href=\"https://github.com/katesowles/aggressively-mediocre-dev\">template repository</a> and the <a href=\"https://github.com/katesowles/aggressively-mediocre\">content repository</a>",
+    "footerText": "This site is built on <a href=\"https://gohugo.io\">Hugo</a>. Post date format inspired by <a href=\"https://tatianamac.com\">Tatiana Mac</a>. For the code-curious, the <a href=\"https://github.com/katesowles/aggressively-mediocre\">template repository</a> and the <a href=\"https://github.com/katesowles/aggressively-mediocre-dev\">content repository</a>",
     "homeNavLinkText": "Posts",
     "listFullPosts": false,
     "rssFullPosts": true,
@@ -27,7 +27,7 @@
   },
   "permalinks": {
     "pages": "/:title/",
-    "posts": "/:year-:month-:day/:title/"
+    "posts": "/posts/:title/"
   },
   "refLinksNotFoundURL": "",
   "taxonomies": {
