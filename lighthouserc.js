@@ -8,8 +8,8 @@
 module.exports = {
   ci: {
     collect: {
-      // url: "https://angry-kirby-8b4540.netlify.app",
-      staticDistDir: "./public",
+      url: "https://angry-kirby-8b4540.netlify.app",
+      // staticDistDir: "./public",
     },
     assert: {
       preset: "lighthouse:recommended",
