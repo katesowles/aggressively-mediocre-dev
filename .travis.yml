@@ -2,7 +2,9 @@ language: node_js
 node_js:
   - 10 # use Node 10 LTS or later
 before_install:
-  - brew install hugo
+  - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - tar xf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - mv hugo ~/bin/
   - npm install -g @lhci/cli
 script:
   - hugo --minify --debug --verbose --verboseLog # build your site
