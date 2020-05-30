@@ -8,6 +8,9 @@ before_install:
   - npm install -g @lhci/cli
 script:
   - hugo --minify --debug --verbose --verboseLog # build your site
+  #   - npm install -g @lhci/cli
+  # script:
+  #   - hugo --gc --minify # build your site
   - lhci autorun --rc-overrides.upload.target=temporary-public-storage # run lighthouse CI
 addons:
   chrome: stable # make sure you have Chrome available
