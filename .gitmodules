@@ -1,0 +1,3 @@
+[submodule "themes/aggressively-mediocre"]
+	path = themes/aggressively-mediocre
+	url = https://github.com/katesowles/aggressively-mediocre-theme.git
