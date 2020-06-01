@@ -5,7 +5,7 @@ date: 2020-05-06T12:00:00-07:00
 draft: false
 ---
 
-**I'm Kate and I use she/her pronouns.** I'm a software developer by day, a sassy wife and pet mother by night, and a feelings-haver at all times of the day; sometimes going so far as to overshare on the internet in [one form](https://www.aggressivelymediocre.dev/ "Aggressively Mediocre Blog")or [another](https://twitter.com/kateypical "@kateypical on Twitter").
+**I'm Kate and I use she/her pronouns.** I'm a software developer by day, a sassy wife and pet mother by night, and a feelings-haver at all times of the day; sometimes going so far as to overshare on the internet in [one form](https://www.aggressivelymediocre.dev/ "Aggressively Mediocre Blog") or [another](https://twitter.com/kateypical "@kateypical on Twitter").
 
 Somehow always posting pictures/videos of my [two year old German Shepherd, Moose](https://twitter.com/kateypical/status/1255610425128833024 "A tweet from @kateypical featuring a video of Moose"), and occasionally videos of my [wheezy old man cat, Turtle](https://twitter.com/kateypical/status/1257722985407901698 "A tweet from @kateypical featuring a video of Turtle"), living his best life.
 
