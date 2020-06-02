@@ -1,0 +1,12 @@
+[
+  {
+    "valuesCalculatedHere": "https://perf-budget-calculator.firebaseapp.com/",
+    "resourceSizes": [
+      { "resourceType": "document", "budget": 10 },
+      { "resourceType": "stylesheet", "budget": 10 },
+      { "resourceType": "font", "budget": 30 },
+      { "resourceType": "image", "budget": 300 },
+      { "resourceType": "script", "budget": 100 }
+    ]
+  }
+]
