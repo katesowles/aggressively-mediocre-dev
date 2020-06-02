@@ -32,10 +32,30 @@ module.exports = {
     },
     assert: {
       preset: "lighthouse:no-pwa",
-      budgetsFile: "/budgets.json",
       includePassedAssertions: true,
       assertions: {
-        "performance-budget": "error",
+        // calculated budget values here: https://perf-budget-calculator.firebaseapp.com/
+        "resource-summary:document": [
+          "warn",
+          { maxNumericValue: 10000, aggregationMethod: "median" },
+        ],
+        "resource-summary:stylesheet": [
+          "warn",
+          { maxNumericValue: 10000, aggregationMethod: "median" },
+        ],
+        "resource-summary:font": [
+          "warn",
+          { maxNumericValue: 30000, aggregationMethod: "median" },
+        ],
+        "resource-summary:image": [
+          "warn",
+          { maxNumericValue: 300000, aggregationMethod: "median" },
+        ],
+        "resource-summary:script": [
+          "warn",
+          { maxNumericValue: 100000, aggregationMethod: "median" },
+        ],
+
         "categories:performance": [
           "error",
           { minScore: 0.98, aggregationMethod: "median" },
