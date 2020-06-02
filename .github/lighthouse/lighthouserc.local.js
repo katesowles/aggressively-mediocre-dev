@@ -5,11 +5,12 @@
  */
 "use strict";
 
+const commonConfig = require("./lighthouse.common");
+
 module.exports = {
+  ...commonConfig,
   ci: {
     collect: {
-      additive: true,
-      isSinglePageApplication: true,
       staticDistDir: "./public",
       url: [
         "http://localhost/",
@@ -30,60 +31,6 @@ module.exports = {
         "http://localhost/posts/001",
         "http://localhost/posts/002",
       ],
-    },
-    assert: {
-      preset: "lighthouse:no-pwa",
-      includePassedAssertions: true,
-      assertions: {
-        // calculated budget values here: https://perf-budget-calculator.firebaseapp.com/
-        "resource-summary:document": [
-          "warn",
-          { maxNumericValue: 10000, aggregationMethod: "median" },
-        ],
-        "resource-summary:stylesheet": [
-          "warn",
-          { maxNumericValue: 10000, aggregationMethod: "median" },
-        ],
-        "resource-summary:font": [
-          "warn",
-          { maxNumericValue: 30000, aggregationMethod: "median" },
-        ],
-        "resource-summary:image": [
-          "warn",
-          { maxNumericValue: 300000, aggregationMethod: "median" },
-        ],
-        "resource-summary:script": [
-          "warn",
-          { maxNumericValue: 100000, aggregationMethod: "median" },
-        ],
-        "categories:performance": [
-          "error",
-          { minScore: 0.98, aggregationMethod: "pessimistic" },
-        ],
-        "categories:accessibility": [
-          "error",
-          { minScore: 0.98, aggregationMethod: "pessimistic" },
-        ],
-        "categories:best-practices": [
-          "error",
-          { minScore: 0.98, aggregationMethod: "pessimistic" },
-        ],
-        "categories:seo": [
-          "error",
-          { minScore: 0.85, aggregationMethod: "pessimistic" },
-        ],
-        "first-contentful-paint": [
-          "error",
-          { maxNumericValue: 2000, aggregationMethod: "pessimistic" },
-        ],
-        interactive: [
-          "error",
-          { maxNumericValue: 2500, aggregationMethod: "pessimistic" },
-        ],
-      },
-    },
-    upload: {
-      target: "temporary-public-storage",
     },
   },
 };

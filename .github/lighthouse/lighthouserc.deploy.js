@@ -5,85 +5,39 @@
  */
 "use strict";
 
+const commonConfig = require("./lighthouse.common");
+
 module.exports = {
+  ...commonConfig,
   ci: {
     collect: {
-      additive: true,
-      isSinglePageApplication: true,
       url: [
-        "http://angry-kirby-8b4540.netlify.app/",
-        "http://angry-kirby-8b4540.netlify.app/about/",
-        "http://angry-kirby-8b4540.netlify.app/browse/",
-        "http://angry-kirby-8b4540.netlify.app/categories/",
-        // "http://angry-kirby-8b4540.netlify.app/categories/personal",
-        // "http://angry-kirby-8b4540.netlify.app/tags/",
-        // "http://angry-kirby-8b4540.netlify.app/tags/adhd",
-        // "http://angry-kirby-8b4540.netlify.app/tags/anxiety",
-        // "http://angry-kirby-8b4540.netlify.app/tags/career",
-        // "http://angry-kirby-8b4540.netlify.app/tags/depression",
-        "http://angry-kirby-8b4540.netlify.app/tags/introduction",
-        // "http://angry-kirby-8b4540.netlify.app/tags/mental-health",
-        // "http://angry-kirby-8b4540.netlify.app/tags/nerodiversity",
-        // "http://angry-kirby-8b4540.netlify.app/tags/software-development"
-        // "http://angry-kirby-8b4540.netlify.app/posts/",
-        "http://angry-kirby-8b4540.netlify.app/posts/001",
-        "http://angry-kirby-8b4540.netlify.app/posts/002",
-      ],
-    },
-    assert: {
-      preset: "lighthouse:no-pwa",
-      includePassedAssertions: true,
-      assertions: {
-        // calculated budget values here: https://perf-budget-calculator.firebaseapp.com/
-        "resource-summary:document": [
-          "warn",
-          { maxNumericValue: 10000, aggregationMethod: "median" },
-        ],
-        "resource-summary:stylesheet": [
-          "warn",
-          { maxNumericValue: 10000, aggregationMethod: "median" },
-        ],
-        "resource-summary:font": [
-          "warn",
-          { maxNumericValue: 30000, aggregationMethod: "median" },
-        ],
-        "resource-summary:image": [
-          "warn",
-          { maxNumericValue: 300000, aggregationMethod: "median" },
-        ],
-        "resource-summary:script": [
-          "warn",
-          { maxNumericValue: 100000, aggregationMethod: "median" },
-        ],
+        `${steps.waitFor200.outputs.url}/`,
+        `${steps.waitFor200.outputs.url}/about/`,
+        `${steps.waitFor200.outputs.url}/browse/`,
+        `${steps.waitFor200.outputs.url}/categories/`,
+        `${steps.waitFor200.outputs.url}/tags/introduction/`,
+        `${steps.waitFor200.outputs.url}/posts/001/`,
+        `${steps.waitFor200.outputs.url}/posts/002/`,
 
-        "categories:performance": [
-          "error",
-          { minScore: 0.98, aggregationMethod: "median" },
-        ],
-        "categories:accessibility": [
-          "error",
-          { minScore: 0.98, aggregationMethod: "median" },
-        ],
-        "categories:best-practices": [
-          "error",
-          { minScore: 0.98, aggregationMethod: "median" },
-        ],
-        "categories:seo": [
-          "error",
-          { minScore: 0.85, aggregationMethod: "median" },
-        ],
-        "first-contentful-paint": [
-          "error",
-          { maxNumericValue: 2000, aggregationMethod: "median" },
-        ],
-        interactive: [
-          "error",
-          { maxNumericValue: 2500, aggregationMethod: "median" },
-        ],
-      },
-    },
-    upload: {
-      target: "temporary-public-storage",
+        // "http://angry-kirby-8b4540.netlify.app/",
+        // "http://angry-kirby-8b4540.netlify.app/about/",
+        // "http://angry-kirby-8b4540.netlify.app/browse/",
+        // "http://angry-kirby-8b4540.netlify.app/categories/",
+        // // "http://angry-kirby-8b4540.netlify.app/categories/personal",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/adhd",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/anxiety",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/career",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/depression",
+        // "http://angry-kirby-8b4540.netlify.app/tags/introduction/",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/mental-health",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/nerodiversity",
+        // // "http://angry-kirby-8b4540.netlify.app/tags/software-development"
+        // // "http://angry-kirby-8b4540.netlify.app/posts/",
+        // "http://angry-kirby-8b4540.netlify.app/posts/001/",
+        // "http://angry-kirby-8b4540.netlify.app/posts/002/",
+      ],
     },
   },
 };
