@@ -48,10 +48,10 @@ module.exports = {
           "error",
           { minScore: 0.98, aggregationMethod: "median" },
         ],
-        "categories:seo": [
-          "error",
-          { minScore: 0.9, aggregationMethod: "median" },
-        ],
+        // "categories:seo": [
+        //   "error",
+        //   { minScore: 0.9, aggregationMethod: "median" },
+        // ],
         "first-contentful-paint": [
           "error",
           { maxNumericValue: 2000, aggregationMethod: "median" },
