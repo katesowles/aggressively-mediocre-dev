@@ -32,7 +32,7 @@ module.exports = {
       ],
     },
     assert: {
-      preset: "lighthouse:now-pwa",
+      preset: "lighthouse:no-pwa",
       budgetsFile: "/budgets.json",
       includePassedAssertions: true,
       assertions: {
