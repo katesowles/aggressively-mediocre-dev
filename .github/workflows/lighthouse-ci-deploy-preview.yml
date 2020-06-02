@@ -14,7 +14,7 @@ jobs:
         uses: JakePartusch/wait-for-netlify-action@v1.2
         id: waitFor200
         with:
-          site_name: "https://angry-kirby-8b4540.netlify.app"
+          site_name: "angry-kirby-8b4540"
 
       - name: Audit deploy preview using Lighthouse
         run: |
