@@ -1,0 +1,70 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+ul,
+ol,
+dl {
+  margin: 0 0 $spacer-sm;
+}
+
+dt {
+  @include textweight-bold();
+}
+
+dd {
+  margin: 0 0 $spacer-sm;
+}
+
+ul {
+  // first level
+  list-style: disc;
+}
+
+ol {
+  // first level
+  list-style: decimal;
+}
+
+ul,
+ol {
+  // first level
+  list-style-position: inside;
+  padding-left: 0;
+
+  > ul {
+    // second level
+    list-style: circle;
+  }
+
+  > ol {
+    // second level
+    list-style: lower-alpha;
+  }
+
+  > ul,
+  > ol {
+    // second level
+    margin: $spacer-xs 0 $spacer-sm;
+    padding-left: $spacer-md;
+
+    > ul {
+      // third level
+      list-style: none;
+    }
+
+    > ol {
+      // third level
+      list-style: lower-roman;
+    }
+
+    > ul,
+    > ol {
+      // third level
+      padding-left: 1.4rem;
+    }
+  }
+}
+
+li {
+  margin: 0 0 $spacer-xs;
+}

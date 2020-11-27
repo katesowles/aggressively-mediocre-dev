@@ -1,0 +1,7 @@
+{{ define "page-main" }}
+<!-- prettier-ignore -->
+
+<main role="main" class="constrained-section responsive-section--bottom site-content post-single">
+  {{ partial "post-body" (dict "context" . "isInList" false "isUnabridged" true) }}
+</main>
+{{ end }}

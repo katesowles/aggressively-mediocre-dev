@@ -1,0 +1,43 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+  @include prefix(box-sizing, border-box);
+}
+
+html,
+body {
+  @include spacing-reset();
+}
+
+html {
+  @include textbase-body();
+  font-size: $textroot-mobile;
+}
+
+body {
+  @include prefix(text-size-adjust, 100%);
+  background-color: $backgroundcolor-default;
+  color: $textcolor-default;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $highlight-color;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: $border-solid-thin;
+  border-bottom: $border-solid-thin;
+  margin: $spacer-md auto;
+}

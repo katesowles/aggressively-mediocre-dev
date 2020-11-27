@@ -1,0 +1,19 @@
+{{ define "page-main" }}
+<!-- this is the page that shows at /browse -->
+
+<!-- prettier-ignore -->
+<main role="main" class="constrained-section responsive-section--bottom site-content page-single">
+  <section class="content columns">
+    {{ range $term_title, $taxonomy := .Site.Taxonomies }}
+      {{ $taxonomyCount := len $taxonomy }}
+
+      {{ if ge $taxonomyCount 2 }}
+        {{ $title := $term_title }}
+        {{ $list :=  $taxonomy.Alphabetical }}
+
+        {{ partial "taxonomy-list" (dict "context" . "title" $title "list" $list ) }}
+      {{ end }}
+    {{ end }}
+  </section>
+</main>
+{{ end }}

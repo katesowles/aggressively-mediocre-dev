@@ -1,0 +1,36 @@
+<!-- prettier-ignore -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="color-scheme" content="dark light">
+
+  {{ with .Site.Params.description }}
+    <meta name="description" content="{{ . }}" />
+  {{ end }}
+  
+  {{ with .Site.Params.author }}
+    <meta name="author" content="{{ . }}" />
+  {{ end }}
+
+  <title>
+    {{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}
+  </title>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600&display=optional">
+
+  {{ $customMobileCss := resources.Get "styles/custom-mobile.scss" | resources.ToCSS }}
+  {{ $customTabletDesktopCss := resources.Get "styles/custom-tablet-desktop.scss" | resources.ToCSS }}
+
+  <link rel="stylesheet" href="{{ $customMobileCss.Permalink | relURL }}" />
+  <link rel="stylesheet" href="{{ $customTabletDesktopCss.Permalink | relURL }}" media="(min-width: 38rem)" />
+
+  {{ if and (.Site.Params.rssFeedLinkText) (.Site.Params.rssFeedLinkUrl) }}
+    <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.rssFeedLinkUrl }}" title="{{ .Site.Title }}" />
+  {{ end }}
+</head>

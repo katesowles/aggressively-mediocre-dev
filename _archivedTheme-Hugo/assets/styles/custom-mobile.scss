@@ -1,0 +1,74 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "_layout-defaults.scss";
+@import "_list-defaults.scss";
+@import "_text-defaults.scss";
+
+/* site structure (desktop sizes set in custom-tablet-desktop.css) */
+.constrained-section {
+  max-width: $site-breakpoint;
+  margin: 0 auto;
+  padding: 0 $spacer-md;
+}
+
+.responsive-section--top {
+  margin-top: $spacer-lg;
+}
+
+.responsive-section--bottom {
+  margin-bottom: $spacer-lg;
+}
+
+.post-date,
+.post-listitem,
+.taxonomy-listitem {
+  @include heading-md();
+
+  &.post-date {
+    @include textcase-uppercase();
+  }
+}
+
+.nav-link,
+.post-tag {
+  @include heading-sm();
+}
+
+.post-duration {
+  @include heading-xs();
+}
+
+.read-more {
+  @include heading-xs();
+  margin-top: $spacer-sm;
+  font-size: $textsize-14;
+}
+
+.post {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.post-frontmatter {
+  margin-bottom: $spacer-md;
+}
+
+#post-nav {
+  padding-top: $spacer-md;
+
+  .prev {
+    padding-right: $spacer-md;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

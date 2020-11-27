@@ -1,0 +1,25 @@
+<div class="post-frontmatter">
+  <!-- prettier-ignore -->
+
+  <h2 class="post-title">
+    {{ if .isTitleLink }}
+      <a href="{{ .context.RelPermalink }}">{{ .context.Title }}</a>
+    {{ else }}
+      {{ .context.Title }}
+    {{ end }}
+  </h2>
+
+  <p class="post-date">
+    <time datetime="{{ .context.Date.UTC.Format "Monday January 02, 2006 15:04:05 MST-0700" }}">
+      {{ .context.Date.UTC.Format "Mon Jan 02 2006 15:04:05 MST-0700" }}
+    </time>
+  </p>
+
+  <p class="post-duration">
+    <time datetime="PT0H{{ .context.ReadingTime }}M0S">{{ .context.ReadingTime }} min</time> read
+    &nbsp;&bullet;&nbsp;
+    {{ .context.WordCount }} words
+  </p>
+
+  {{ partial "post-tags" .context }}
+</div>
