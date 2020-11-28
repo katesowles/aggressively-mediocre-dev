@@ -1,6 +1,0 @@
-<nav role="navigation" aria-label="tags for post: {{ .Title }}" class="post-tags">
-  {{ range .Params.tags }}
-    {{/* NOTE: the 'replace' exchanges a breaking space with a non-breaking space so tag names don't wrap */}}
-    <a class="post-tag" href="{{ "./tags/" | relLangURL }}{{ . | urlize }}">{{ replace . " " "\u00A0" }}</a>
-  {{ end }}
-</nav>

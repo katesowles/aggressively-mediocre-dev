@@ -32,3 +32,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# ignoring changes to archived Hugo files for safety
+/_archivedSite-Hugo
+/_archivedTheme-Hugo
