@@ -1,0 +1,13 @@
+build
+lib
+node_modules
+public
+shared
+static
+.cache
+.next
+.vscode
+.vercel/cache
+
+.eslintrc.js
+.lintstagedrc.js
