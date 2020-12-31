@@ -1,0 +1,17 @@
+module.exports = {
+  extends: [
+    'airbnb-typescript',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
+    'prettier/react',
+  ],
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
+  rules: {
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+  },
+};
