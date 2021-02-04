@@ -1,0 +1,122 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+a {
+  @include link-highlights(6px, 22px);
+  color: $textcolor-default;
+  text-decoration: none;
+}
+
+h1 {
+  // site title
+  @include heading-xl();
+}
+
+h2 {
+  // page titles and post titles
+  @include heading-lg();
+}
+
+h3 {
+  @include heading-md();
+}
+
+h4 {
+  @include heading-sm();
+}
+
+h5,
+h6 {
+  @include heading-xs();
+}
+
+p {
+  @include body();
+}
+
+small {
+  @include textbase-body();
+  @include textweight-normal();
+  color: $textcolor-light;
+  font-size: $textsize-xs;
+  text-transform: initial;
+}
+
+p + h1,
+p + h2,
+p + h3,
+ul + h1,
+ul + h2,
+ul + h3,
+ol + h1,
+ol + h2,
+ol + h3 {
+  margin-top: $spacer-md;
+}
+
+li {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    display: inline-block;
+  }
+}
+
+strong {
+  @include textweight-bold();
+  color: inherit;
+}
+
+abbr {
+  @include textweight-bold();
+  @include textcase-uppercase();
+  font-size: $textsize-sm;
+  color: $textcolor-default;
+
+  &[title] {
+    border-bottom: $border-dotted;
+    cursor: help;
+  }
+}
+
+blockquote {
+  padding: 0 0 0 $spacer-md;
+  margin: 0 $spacer-lg $spacer-md 0;
+  color: $textcolor-light;
+  border-left: $border-solid-thick;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+code,
+pre {
+  @include textbase-code();
+  background-color: $backgroundcolor-alt;
+  border-radius: $border-radius;
+}
+
+code {
+  // inline
+  padding: $spacer-xs $spacer-sm;
+}
+
+pre {
+  // block
+  display: block;
+  margin: 0 0 $spacer-md;
+  padding: $spacer-md;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+
+  code {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+}
