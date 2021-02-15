@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, Fragment } from 'react';
 import Link from 'next/link';
 import metadata from '~/data/metadata';
 
@@ -11,16 +11,20 @@ export const Header: FC = () => {
 
       <nav role="navigation" aria-label="primary" className="primary-nav">
         {Object.entries(metadata?.sitePages).map(([key, value]) => (
-          <Link href={value} key={key}>
-            {/* className="nav-link page" */}
-            {key}
-          </Link>
+          <Fragment key={key}>
+            <Link href={value}>
+              {/* className="nav-link page" */}
+              {key}
+            </Link>
+            &ensp;
+          </Fragment>
         ))}
 
         {Object.entries(metadata?.siteFeeds).map(([key, value]) => (
           <Link href={value} key={key}>
             {/* className="nav-link feed" */}
             {key}
+            &ensp;
           </Link>
         ))}
       </nav>
