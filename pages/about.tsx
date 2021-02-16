@@ -1,8 +1,12 @@
 import React, { FC } from 'react';
-import { Layout } from '~/components/layout';
+import { PageBody, PageBodySection } from '~/components/page-body';
 
 const About: FC = () => {
-  return <Layout>About</Layout>;
+  return (
+    <PageBody title="Browse">
+      <PageBodySection>About</PageBodySection>
+    </PageBody>
+  );
 };
 
 export default About;

@@ -22,7 +22,12 @@ export const Layout: FC<LayoutProps> = ({
 
       <Header />
 
-      <main>{children}</main>
+      <main
+        role="main"
+        className="constrained-section responsive-section--bottom site-content"
+      >
+        {children}
+      </main>
 
       <Footer />
     </>
