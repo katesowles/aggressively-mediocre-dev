@@ -7,41 +7,41 @@ export const Footer: FC = () => {
       className="constrained-section responsive-section--top responsive-section--bottom site-footer"
     >
       <p>
-        This site is built on{' '}
+        This site is built with{' '}
         <a
-          href="https://gohugo.io"
-          title="Go Hugo, homepage for the Hugo framework"
+          href="https://reactjs.org"
+          title="React Homepage"
           target="_blank"
           rel="noreferrer"
         >
-          Hugo
-        </a>
-        . Post date format inspired by{' '}
-        <a
-          href="https://tatianamac.com"
-          title="Tatiana Mac's Website"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Tatiana Mac
-        </a>
-        . For the code-curious, the{' '}
-        <a
-          href="https://github.com/katesowles/aggressively-mediocre-theme"
-          title="Github repository for the Aggressively Mediocre theme"
-          target="_blank"
-          rel="noreferrer"
-        >
-          template repository
+          React
         </a>{' '}
-        and the{' '}
+        and{' '}
+        <a
+          href="https://nextjs.org"
+          title="Next.js Homepage"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Next.js
+        </a>
+        , and is deployed via{' '}
+        <a
+          href="https://netlify.app"
+          title="Netlify Homepage"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Netlify
+        </a>
+        . For the code-curious: the{' '}
         <a
           href="https://github.com/katesowles/aggressively-mediocre-dev"
-          title="Github repository for the Aggressively Mediocre blog content"
+          title="Github repository for the Aggressively Mediocre Dev site"
           target="_blank"
           rel="noreferrer"
         >
-          content repository
+          code repository
         </a>
       </p>
     </footer>
