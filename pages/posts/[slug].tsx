@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { getStaticPathsGeneral, getStaticPropsSinglePost } from '~/utils/api';
 import { Layout } from '~/components/layout';
 import { PostSingle } from '~/components/post-single';
+import { PostParams } from '~/types/params';
 
-export default ({ post, morePosts, preview }) => {
+type PostProps = {
+  post: PostParams;
+};
+
+const Post: FC<PostProps> = ({ post, ...props }) => {
   const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {

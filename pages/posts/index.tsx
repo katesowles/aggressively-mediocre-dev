@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 import { getStaticPropsAllPosts } from '~/utils/api';
 import { Layout } from '~/components/layout';
 import { PostList } from '~/components/post-list';
+import { PostParams } from '~/types/params';
 
-export default ({ posts }) => {
+type PostsProps = {
+  posts: PostParams[];
+};
+
+const Posts: FC<PostsProps> = ({ posts }) => {
   const router = useRouter();
 
   return (
