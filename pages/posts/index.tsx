@@ -19,4 +19,4 @@ const Posts: FC<PostsProps> = ({ posts }) => {
   );
 };
 
-export const getStaticProps = getStaticPropsAllPosts;
+export default Posts;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-export const Taxonomy: FC = () => {
+const TaxonomyCategories: FC = () => {
   return (
     <>
       {/* <!-- this is the page that shows at /categories/:category and /tags/:tag --> */}
@@ -25,3 +25,5 @@ export const Taxonomy: FC = () => {
     </>
   );
 };
+
+export default TaxonomyCategories;

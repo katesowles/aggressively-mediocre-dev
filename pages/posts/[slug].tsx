@@ -24,5 +24,5 @@ const Post: FC<PostProps> = ({ post, ...props }) => {
   );
 };
 
-export const getStaticProps = getStaticPropsSinglePost;
+export default Post;
 export const getStaticPaths = getStaticPathsGeneral;
