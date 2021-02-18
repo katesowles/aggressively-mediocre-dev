@@ -1,9 +1,13 @@
 import remark from 'remark';
 import html from 'remark-html';
+import externalLinks from 'remark-external-links';
 import Post from '~/types/post';
 
 export const markdownToHtml = async (markdown) => {
-  const result = await remark().use(html).process(markdown);
+  const result = await remark()
+    .use(externalLinks, { target: false, rel: ['nofollow', 'noreferrer'] })
+    .use(html)
+    .process(markdown);
   return result.toString();
 };
 
