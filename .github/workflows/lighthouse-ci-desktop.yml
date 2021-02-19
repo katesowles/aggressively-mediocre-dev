@@ -1,5 +1,14 @@
 name: Lighthouse (Preview)
-on: [pull_request]
+on:
+  push:
+    branches:
+      - release
+      - staging
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+    branches:
+      - release
+      - staging
 jobs:
   CI:
     runs-on: ubuntu-latest
@@ -16,14 +25,7 @@ jobs:
         with:
           site_name: angry-kirby-8b4540
 
-      - name: Audit Lighthouse on deployed preview (mobile)
-        run: |
-          sudo npm install -g @lhci/cli@0.4.x
-          lhci autorun healthcheck --config=./.github/lighthouse/lighthouserc.deploy.js
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
-      - name: Audit Lighthouse on deployed preview (desktop)
+      - name: Audit desktop preview
         run: |
           sudo npm install -g @lhci/cli@0.4.x
           lhci autorun healthcheck --config=./.github/lighthouse/lighthouserc.deploy.js --lighthouse.settings.emulatedFormFactor=desktop
