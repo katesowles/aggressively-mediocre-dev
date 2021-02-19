@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
-import { getStaticPropsAllPosts } from '~/utils/api';
+import { getStaticPropsGeneral } from '~/utils/api';
 import { Layout } from '~/components/layout';
 import { PostList } from '~/components/post-list';
 import { PostParams } from '~/types/params';
@@ -20,3 +20,4 @@ const Posts: FC<PostsProps> = ({ posts }) => {
 };
 
 export default Posts;
+export const getStaticProps = getStaticPropsGeneral;

@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import metadata from '~/data/metadata';
-import Post from '~/types/post';
+import { PostParams } from '../types/params';
 import { PostBody } from './post-body';
 
 type PostListProps = {
-  posts: Post[];
+  posts: PostParams[];
 };
 
 export const PostList: FC<PostListProps> = ({ posts }) => {

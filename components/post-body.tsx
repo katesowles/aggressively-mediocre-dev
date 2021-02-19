@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
 import { PostFrontmatter } from './post-frontmatter';
-import Post from '../types/post';
+import { PostParams } from '../types/params';
 
 type PostBodyProps = {
-  post: Post;
+  post: PostParams;
   isExcerpt?: boolean;
 };
 

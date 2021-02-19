@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
-import Post from '~/types/post';
+import { PostParams } from '../types/params';
 import { getTimeToRead } from '~/utils/content';
 import { getDateObjects } from '~/utils/dates';
 import { isActiveSlug } from '~/utils/routes';
 import { PostTags } from './post-tags';
 
-export const PostFrontmatter: FC<Post> = ({
+export const PostFrontmatter: FC<PostParams> = ({
   title,
   content,
   date,

@@ -2,22 +2,40 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { postParams, PostParams, PostParam } from '~/types/params';
+import { CustomStaticProps } from '~/types/customStaticProps';
 import { convertPostContent } from './markdown';
 
-const postsDirectory = join(process.cwd(), 'content/posts');
+const keySlugDirectories = {
+  page: 'content/pages',
+  post: 'content/posts',
+  site: 'content/site-wide',
+};
 
-export const getPostSlugs = (): string[] => {
-  return fs.readdirSync(postsDirectory);
+type KeySlugType = keyof typeof keySlugDirectories;
+
+const getContentPath = (type: KeySlugType, path?: string | string[]) => {
+  return Array.isArray(path)
+    ? join(process.cwd(), keySlugDirectories[type], ...path)
+    : join(process.cwd(), keySlugDirectories[type], path ?? '');
+};
+
+const getKeySlugs = (type: KeySlugType): string[] => {
+  return fs.readdirSync(getContentPath(type));
+};
+
+const getMarkdownData = (type: KeySlugType, filename?: string) => {
+  const realSlug = filename.replace(/\.md$/, '');
+  const fullPath = getContentPath(type, filename);
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+  return { ...matter(fileContents), realSlug };
 };
 
 export const getPostBySlug = (
   slug: string,
   fields: PostParam[],
 ): PostParams => {
-  const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+  const { data, content, realSlug } = getMarkdownData('post', slug);
 
   const items = {} as PostParams;
 
@@ -32,7 +50,7 @@ export const getPostBySlug = (
 };
 
 const getAllPosts = (fields: PostParam[]): PostParams[] => {
-  const slugs = getPostSlugs();
+  const slugs = getKeySlugs('post');
   const posts = slugs
     .map((slug: string) => getPostBySlug(slug, fields))
     .sort((post1: PostParams, post2: PostParams) =>
@@ -41,20 +59,16 @@ const getAllPosts = (fields: PostParam[]): PostParams[] => {
   return posts;
 };
 
-export const getStaticPropsAllPosts = async (): Promise<{
-  props: { posts: PostParams[] };
-}> => {
+export const getStaticPropsGeneral = async ({
+  params,
+}: {
+  params?;
+}): Promise<CustomStaticProps> => {
   let posts: PostParams[] = getAllPosts(postParams) as PostParams[];
   posts = await Promise.all(posts.map(convertPostContent));
-  return { props: { posts } };
-};
+  const post = posts.find((item) => item?.slug === params?.slug) ?? null;
 
-export const getStaticPropsSinglePost = async ({
-  params,
-}): Promise<{ props: { post: Post } }> => {
-  let post: Post = getPostBySlug(params.slug, postParams) as Post;
-  post = await convertPostContent(post);
-  return { props: { post } };
+  return { props: { posts, post } };
 };
 
 export const getStaticPathsGeneral = async () => {

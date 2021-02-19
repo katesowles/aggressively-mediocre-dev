@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import Post from '~/types/post';
+import { PostParams } from '../types/params';
 import { PostBody } from './post-body';
 
-export const PostSingle: FC<{ post: Post }> = ({ post }) => {
+export const PostSingle: FC<{ post: PostParams }> = ({ post }) => {
   return <PostBody post={post} />;
 };

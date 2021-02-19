@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { getStaticPathsGeneral, getStaticPropsSinglePost } from '~/utils/api';
+import { getStaticPathsGeneral, getStaticPropsGeneral } from '~/utils/api';
 import { Layout } from '~/components/layout';
 import { PostSingle } from '~/components/post-single';
 import { PostParams } from '~/types/params';
@@ -25,4 +25,5 @@ const Post: FC<PostProps> = ({ post, ...props }) => {
 };
 
 export default Post;
+export const getStaticProps = getStaticPropsGeneral;
 export const getStaticPaths = getStaticPathsGeneral;
